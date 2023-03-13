@@ -1,0 +1,12 @@
+server:
+  port: ${PORT:8080}
+
+
+server:
+  cloud:
+    gateway:
+      routes:
+        - id: catalog-route
+          uri: lb://catalog-service
+          predicates: 
+            - Path: /catalog/**
