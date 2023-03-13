@@ -1,1 +1,4 @@
-# esp-backend-parcial
+# Especializacion Backend I - Digital House - Parcial
+
+Autor: Jonathan Quiroz Laverde
+Fecha: 2022 - 03 - 13
