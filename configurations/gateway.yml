@@ -3,6 +3,9 @@ server:
 
 
 server:
+  application:
+    name: gateway
+
   cloud:
     gateway:
       discovery:
