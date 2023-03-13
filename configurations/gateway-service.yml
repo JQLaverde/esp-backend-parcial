@@ -4,7 +4,7 @@ server:
 
 server:
   application:
-    name: gateway
+    name: gateway-service
 
   cloud:
     gateway:
