@@ -11,17 +11,17 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/catalog")
 public class CatalogController {
-
     @Autowired
     private  ICatalogService catalogService;
 
     @GetMapping("/{genre}")
-    ResponseEntity<List<Movie>> getGenre(@PathVariable String genre) {
-        return ResponseEntity.ok(catalogService.getMovieByGenre(genre));
+    ResponseEntity<Map<String, List<?>>> getGenre(@PathVariable String genre) {
+        return ResponseEntity.ok(catalogService.getMovieAndSeriesByGenre(genre));
     }
 
 }
