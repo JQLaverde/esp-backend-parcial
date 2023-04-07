@@ -1,5 +1,0 @@
-FROM mongo:4.0.2
-
-# Puerto en el que se ejecutará MongoDB dentro del contenedor
-EXPOSE 27017
-

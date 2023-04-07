@@ -15,15 +15,13 @@ public class CatalogListener {
     private final CatalogService service;
 
     @RabbitListener(queues = { "${queue.movie.name}" })
-    public void receive(@Payload Movie movie) {
-        //service.save(movie);
-        System.out.println("Aqui metodo para guardar");
+    public void receiveMovie(@Payload Movie movie) {
+        service.createMovie(movie);
     }
 
     @RabbitListener(queues = { "${queue.serie.name}" })
-    public void receive(@Payload Serie serie) {
-        //service.save(serie);
-        System.out.println("Aqui metodo para guardar");
+    public void receiveSerie(@Payload Serie serie) {
+        service.createSerie(serie);
     }
 
 }

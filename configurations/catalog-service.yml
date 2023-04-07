@@ -23,9 +23,9 @@ spring:
 
 queue:
   movie:
-    name: MovieQueue
+    name: NewMovie
   serie:
-    name: SerieQueue
+    name: NewSerie
 
 feign:
   circuitbreaker:
