@@ -4,6 +4,17 @@ server:
 spring:
   application:
     name: catalog-service
+  rabbitmq:
+    username: guest
+    password: guest
+    host: localhost
+    port: 5672
+
+queue:
+  movie:
+    name: MovieQueue
+  serie:
+    name: SerieQueue
 
 message: hello from catalog-service
 
