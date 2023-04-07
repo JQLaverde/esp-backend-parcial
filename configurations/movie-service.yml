@@ -25,7 +25,7 @@ spring:
     port: 5672
 
 queue:
-  serie:
+  movie:
     name: MovieQueue
 
 message: hello from movie-service
