@@ -62,13 +62,13 @@ Pdta: Las bases de datos para serie y catalog estan embebidas y son base de dato
 
 - Para consultar series
 
-```http
+```sh
 [GET]
 http://localhost:8081/api/v1/series/{genre}
 ```
 
 - Para guardar series
-```http
+```sh
 [POST]
 http://localhost:8081/api/v1/series/
 ```
@@ -117,13 +117,13 @@ Un JSON de ejemplo:
 ### Movies
 
 - Para consultar movies
-```http
+```sh
 [GET]
 http://localhost:8081/api/v1/movies/{genre}
 ```
 
 - Para guardar movies
-```http
+```sh
 [POST]
 http://localhost:8081/api/v1/movies/save
 ```
@@ -142,14 +142,14 @@ Un JSON de ejemplo:
 
 - Para consultar el catalogo de manera online
 
-```http
+```sh
 [GET]
 http://localhost:8081/catalog/{genre}
 ```
 
 - Para consultar el catalogo de manera offline
 
-```http
+```sh
 [GET]
 http://localhost:8081/catalog/offline/{genre}
 ```
