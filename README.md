@@ -3,6 +3,15 @@
 Autor: Jonathan Quiroz Laverde <br>
 Fecha: 2022 - 04 - 07
 
+## Justificación Circuit Breaker
+
+Las caracteristicas usadas en el circuit breaker dentro de catalog para los microservicios de serie y movie son los siguientes:
+
+- Se realizan 5 intentos. En este momento el circuit breaker tiene estado cerrado.
+- Si 3 de los 5 intentos son fallidos entonces pasa a ejecutar el Fallback. Y se pasa a un estado abierto en el circuit breaker.
+- En este caso el Fallback lo que hace es, en vez ya de ir a consultar a los microservicios de movie y serie, se dirige a la base de datos de MongoDB, donde tiene las movies y series que se han agregado y han quedado en la cola de RabbitMQ las cuales toma y almacena, devolviendo asi al usuario una respuesta.
+- Luego de 15s el circuit breaker pasa a estado semi-abierto y hace 3 llamados para comprobar si el microservicio ya esta funcionando, sino vuelve a estado abierto y continua el ciclo.
+
 
 ## Pasos para la ejecución:
 
