@@ -29,7 +29,7 @@ spring:
 
 queue:
   movie:
-    name: MovieQueue
+    name: NewMovie
 
 message: hello from movie-service
 
