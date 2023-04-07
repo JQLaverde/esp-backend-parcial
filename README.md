@@ -54,3 +54,102 @@ mvn spring-boot:run
 7. Por ultimo levantamos nuestro gateway y ya estaria listo todo para usar! Pdta: El gateway se levanta de la misma manera.
 
 Pdta: Las bases de datos para serie y catalog estan embebidas y son base de datos de MongoDB, adicional recordar tener colas creadas para Movie y Series antes de ejecutar Catalog, ya que al tratar de consumir colas que no existen se produce un error.
+
+
+## Endpoints
+
+### Series
+
+- Para consultar series
+
+```http
+[GET]
+http://localhost:8081/api/v1/series/{genre}
+```
+
+- Para guardar series
+```http
+[POST]
+http://localhost:8081/api/v1/series/
+```
+
+Un JSON de ejemplo:
+```json
+{
+    "name": "Breaking Bad",
+    "genre": "action",
+    "seasons": [
+        {
+            "seasonNumber": 1,
+            "chapters": [
+                {
+                    "name": "Pilot",
+                    "number": 1,
+                    "urlStream": "https://www.netflix.com/breaking_bad/1/1"
+                },
+                {
+                    "name": "Start",
+                    "number": 2,
+                    "urlStream": "https://www.netflix.com/breaking_bad/1/2"
+                }
+            ]
+        },
+        {
+            "seasonNumber": 2,
+            "chapters": [
+                {
+                    "name": "Pilot",
+                    "number": 1,
+                    "urlStream": "https://www.netflix.com/breaking_bad/2/1"
+                },
+                {
+                    "name": "Start",
+                    "number": 2,
+                    "urlStream": "https://www.netflix.com/breaking_bad/2/2"
+                }
+            ]
+        }
+    ]
+
+}
+```
+
+### Movies
+
+- Para consultar movies
+```http
+[GET]
+http://localhost:8081/api/v1/movies/{genre}
+```
+
+- Para guardar movies
+```http
+[POST]
+http://localhost:8081/api/v1/movies/save
+```
+
+Un JSON de ejemplo:
+```json
+{
+    "name": "Rapidos y Furiosos 4",
+    "genre": "action",
+    "urlStream": "what"
+}
+```
+
+
+### Catalog
+
+- Para consultar el catalogo de manera online
+
+```http
+[GET]
+http://localhost:8081/catalog/{genre}
+```
+
+- Para consultar el catalogo de manera offline
+
+```http
+[GET]
+http://localhost:8081/catalog/offline/{genre}
+```
