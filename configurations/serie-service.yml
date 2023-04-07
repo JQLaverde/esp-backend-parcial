@@ -12,6 +12,15 @@ spring:
       database: test
       host: localhost
       port: 27017
+  rabbitmq:
+    username: guest
+    password: guest
+    host: rabbitmq
+    port: 5672
+
+queue:
+  serie:
+    name: SerieQueue
 
 
 message: hello from serie-service
